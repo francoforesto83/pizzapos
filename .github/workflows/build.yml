@@ -19,17 +19,13 @@ jobs:
       - name: Crear archivo de entorno por defecto
         run: touch .env.example
 
-      - name: Instalar Gradle
-        run: sudo apt-get update && sudo apt-get install -y gradle
-
-      - name: Generar Wrapper de Gradle
-        run: gradle wrapper
-
-      - name: Dar permisos al Wrapper
-        run: chmod +x ./gradlew
+      - name: Configurar Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.5'
 
       - name: Compilar APK Debug
-        run: ./gradlew assembleDebug
+        run: gradle assembleDebug
 
       - name: Subir APK generado
         uses: actions/upload-artifact@v4
