@@ -1,0 +1,6 @@
+{
+  "name": "PizzaPOS",
+  "description": "Sistema de punto de venta y gestión para pizzería con mesas, delivery, comandas, ticket de cocina e historial de ventas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
