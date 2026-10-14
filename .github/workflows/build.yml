@@ -17,10 +17,12 @@ jobs:
           distribution: 'temurin'
 
       - name: Dar permisos a Gradle
-        run: chmod +x gradlew
+        run: chmod +x ./gradlew
+        working-directory: .
 
       - name: Compilar APK Debug
         run: ./gradlew assembleDebug
+        working-directory: .
 
       - name: Subir APK generado
         uses: actions/upload-artifact@v4
