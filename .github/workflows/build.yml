@@ -16,11 +16,11 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Generar Gradle Wrapper
-        run: gradle wrapper
+      - name: Crear archivo de entorno por defecto
+        run: touch .env.example
 
-      - name: Dar permisos a Gradle
-        run: chmod +x ./gradlew
+      - name: Configurar Gradle
+        uses: gradle/actions/setup-gradle@v3
 
       - name: Compilar APK Debug
         run: ./gradlew assembleDebug
